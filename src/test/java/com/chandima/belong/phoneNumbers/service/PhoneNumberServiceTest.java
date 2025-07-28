@@ -1,6 +1,6 @@
 package com.chandima.belong.phoneNumbers.service;
 
-import com.chandima.belong.phoneNumbers.exception.ClientException;
+import com.chandima.belong.phoneNumbers.exception.NotFoundException;
 import com.chandima.belong.phoneNumbers.model.PhoneNumber;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.util.ReflectionTestUtils;
@@ -64,7 +64,7 @@ public class PhoneNumberServiceTest {
     public void activate_whenNotExists_ClientException() {
         populatePhoneNumbers();
         //activate
-        ClientException clientException = assertThrows(ClientException.class, () -> phoneNumberService.activate("notExisting"));
+        NotFoundException clientException = assertThrows(NotFoundException.class, () -> phoneNumberService.activate("notExisting"));
         assertEquals("phone number not found", clientException.getMessage());
     }
 

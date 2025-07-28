@@ -5,12 +5,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ActivatePhoneRequest {
-    private String phoneNumber;
+public class ActivatePhoneResponse {
+    private String result;
 }

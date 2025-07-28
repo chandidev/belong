@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "4d169fb1-80a4-4da8-a71e-f53280ffa497",
+		"name": "belong",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "839015",
+		"_collection_link": "https://winter-firefly-922885.postman.co/workspace/ChandimaHomeTest~c8a51914-c528-454c-8c7a-4f2631555172/collection/839015-4d169fb1-80a4-4da8-a71e-f53280ffa497?action=share&source=collection_link&creator=839015"
+	},
+	"item": [
+		{
+			"name": "get all phone numbers",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/phoneNumbers"
+			},
+			"response": [
+				{
+					"name": "get all phone numbers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/phoneNumbers"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Jul 2025 18:31:12 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"phoneNumber\": \"0311110001\",\n        \"customerId\": 1,\n        \"active\": false\n    },\n    {\n        \"phoneNumber\": \"0311110002\",\n        \"customerId\": 1,\n        \"active\": false\n    },\n    {\n        \"phoneNumber\": \"0311110003\",\n        \"customerId\": 1,\n        \"active\": false\n    },\n    {\n        \"phoneNumber\": \"0311110005\",\n        \"customerId\": 2,\n        \"active\": false\n    },\n    {\n        \"phoneNumber\": \"0311110006\",\n        \"customerId\": 2,\n        \"active\": false\n    },\n    {\n        \"phoneNumber\": \"0311110007\",\n        \"customerId\": 3,\n        \"active\": false\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get customer phone numbers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/customer/1/phoneNumbers"
+			},
+			"response": [
+				{
+					"name": "get customer phone numbers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/customer/1/phoneNumbers"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Jul 2025 18:32:37 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"phoneNumber\": \"0311110001\",\n        \"customerId\": 1,\n        \"active\": false\n    },\n    {\n        \"phoneNumber\": \"0311110002\",\n        \"customerId\": 1,\n        \"active\": false\n    },\n    {\n        \"phoneNumber\": \"0311110003\",\n        \"customerId\": 1,\n        \"active\": false\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "activate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/phoneNumbers/0311110001/activate"
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/phoneNumbers/0311110001/activate"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Jul 2025 18:33:16 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": \"success\"\n}"
+				},
+				{
+					"name": "not found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/phoneNumbers/00000/activate"
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Jul 2025 18:33:56 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Resource not found\",\n    \"message\": \"phone number not found\",\n    \"timestamp\": \"2025-07-29T04:33:56.969281\"\n}"
+				}
+			]
+		}
+	]
+}

@@ -1,6 +1,6 @@
 package com.chandima.belong.phoneNumbers.service;
 
-import com.chandima.belong.phoneNumbers.exception.ClientException;
+import com.chandima.belong.phoneNumbers.exception.NotFoundException;
 import com.chandima.belong.phoneNumbers.model.PhoneNumber;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
@@ -16,6 +16,7 @@ public class PhoneNumberService {
     /**
      * initialize phone numbers. as per assignment details. in a production scenario data will be fedtechd from database.
      **/
+    @PostConstruct
     public void init() {
         phoneNumberList.add(PhoneNumber.builder().customerId(1).phoneNumber("0311110001").build());
         phoneNumberList.add(PhoneNumber.builder().customerId(1).phoneNumber("0311110002").build());
@@ -41,7 +42,7 @@ public class PhoneNumberService {
                 .findFirst()
                 .ifPresentOrElse(number -> number.setActive(true),
                         () -> {
-                            throw new ClientException("phone number not found");
+                            throw new NotFoundException("phone number not found");
                         });
 
     }

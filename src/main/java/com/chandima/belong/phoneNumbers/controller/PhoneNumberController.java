@@ -1,7 +1,7 @@
 package com.chandima.belong.phoneNumbers.controller;
 
 
-import com.chandima.belong.phoneNumbers.model.ActivatePhoneRequest;
+import com.chandima.belong.phoneNumbers.model.ActivatePhoneResponse;
 import com.chandima.belong.phoneNumbers.model.PhoneNumber;
 import com.chandima.belong.phoneNumbers.service.PhoneNumberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +26,10 @@ public class PhoneNumberController {
         return phoneNumberService.getPhoneNumbers(customerId);
     }
 
-    @PostMapping("/customer/{customerId}/activate")
-    public void activatePhone(@PathVariable Integer customerId,  @RequestBody ActivatePhoneRequest activatePhoneRequest) {
-        this.phoneNumberService.activate(activatePhoneRequest.getPhoneNumber());
-
+    @PutMapping("/phoneNumbers/{phoneNumber}/activate")
+    public ActivatePhoneResponse activatePhone(@PathVariable String phoneNumber) {
+        this.phoneNumberService.activate(phoneNumber);
+        return ActivatePhoneResponse.builder().result("success").build();
     }
 
 }
